@@ -8,11 +8,11 @@ file = "tidb-lightning.log"
 backend = "local"
 # Sets the directory for temporarily storing the sorted key-value pairs.
 # The target directory must be empty.
-sorted-kv-dir = "/home/ubuntu/pingcap_training/coursefile/sorted-kv-dir"
+sorted-kv-dir = "/home/ubuntu/pingcap_training/pingcap101/coursefile/sorted-kv-dir"
 
 [mydumper]
 # Local source data directory
-data-source-dir = "/home/ubuntu/pingcap_training/coursefile/data"
+data-source-dir = "/home/ubuntu/pingcap_training/pingcap101/coursefile/data"
 no-schema = true
 
 # Configures the wildcard rule. By default, all tables in the mysql, sys, INFORMATION_SCHEMA, PERFORMANCE_SCHEMA, METRICS_SCHEMA, and INSPECTION_SCHEMA system databases are filtered.

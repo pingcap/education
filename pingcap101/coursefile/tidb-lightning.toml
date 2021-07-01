@@ -2,7 +2,7 @@
 # logging
 level = "info"
 file = "tidb-lightning.log"
-check-requirements = false
+#check-requirements = false
 
 [tikv-importer]
 # Uses the Local-backend

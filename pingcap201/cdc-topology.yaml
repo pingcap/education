@@ -1,0 +1,5 @@
+cdc_servers:
+  - host: 127.0.0.1
+    port: 8300
+    deploy_dir: "/home/ubuntu/tidb-deploy/cdc-8300"
+    log_dir: "/home/ubuntu/tidb-deploy/cdc-8300/log"

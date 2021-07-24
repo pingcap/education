@@ -1,0 +1,11 @@
+global:
+  user: 'root'
+  ssh_port: 22
+  deploy_dir: '/home/ubuntu/data/dm-demo/deploy'
+  data_dir: '/home/ubuntu/data/dm-demo/data'
+
+master_servers:
+  - host: 127.0.0.1
+
+worker_servers:
+  - host: 127.0.0.1

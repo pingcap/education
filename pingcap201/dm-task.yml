@@ -1,0 +1,16 @@
+name: 'dm-demo-task'
+task-mode: 'all'
+shard-mode: 'pessimistic'
+target-database:
+  host: localhost
+  port: 4000
+  user: 'root'
+  password: ''
+
+mysql-instances:
+- source-id: 'mysql-demo'
+  block-allow-list: 'a'
+
+block-allow-list:
+  a:
+    do-dbs: ['customerDB.*']

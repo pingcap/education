@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class DBExporter {
     public static void main(String[] args) {
-        String jdbcURL = "jdbc:mysql://localhost:3306/CustomerDB";
+        String jdbcURL = "jdbc:mysql://localhost:3306/customerdb";
         String username = "root";
         String password = "";
 
@@ -26,13 +26,13 @@ public class DBExporter {
             while (result.next()) {
                 //String id= Integer.toString(result.getInt("id"));
                 Integer id= result.getInt("id");
-                String firstname= result.getString("firstname");
-                String lastname = result.getString("lastname");
-                String customerUsername = result.getString("username");
-                String membership= result.getString("membership");
+                String firstname= result.getString("first_name");
+                String lastname = result.getString("last_name");
+                String email = result.getString("email");
+                String shirtsize= result.getString("shirtsize");
 
                 String line = String.format("%d,%s,%s,%s,%s",
-                        id, firstname, lastname, username, membership);
+                        id, firstname, lastname, email, shirtsize);
 
                 fileWriter.newLine();
                 fileWriter.write(line);

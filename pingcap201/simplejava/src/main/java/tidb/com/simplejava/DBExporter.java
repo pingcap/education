@@ -21,7 +21,7 @@ public class DBExporter {
             BufferedWriter fileWriter = new BufferedWriter(new FileWriter(csvFilePath));
 
             // write header line containing column names
-            fileWriter.write("id, firstname,lastname,username,membership");
+            fileWriter.write("id, firstname,lastname,username,shirtsize");
 
             while (result.next()) {
                 //String id= Integer.toString(result.getInt("id"));

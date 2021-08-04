@@ -13,4 +13,4 @@ mysql-instances:
 
 block-allow-list:
   a:
-    do-dbs: ['customerDB.*']
+    do-dbs: ['customerdb']

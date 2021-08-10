@@ -1,0 +1,8 @@
+# Specifies whether the database names and tables in the configuration file are case-sensitive.
+# The default value is true.
+# This configuration item affects configurations related to filter and sink.
+case-sensitive = true
+
+# Specifies whether to output the old value. New in v4.0.5. Since v5.0, the default value is `true`.
+enable-old-value = true
+force-replicate = true

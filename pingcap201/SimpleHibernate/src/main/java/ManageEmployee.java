@@ -1,3 +1,4 @@
+//Reference for this project: https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
 import java.util.List;
 import java.util.Date;
 import java.util.Iterator;

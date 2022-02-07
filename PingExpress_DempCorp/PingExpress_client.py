@@ -213,7 +213,6 @@ if __name__ == '__main__':
 		update_timestamp(connection_string)
 		print("updating timestamp finished")
 
-	
 	if args['load']:
 		print("starts loading")
 		pool = multiprocessing.Pool(args['clients'])

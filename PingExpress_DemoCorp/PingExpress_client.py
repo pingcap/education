@@ -88,7 +88,7 @@ def execute(duration, connection_string):
 		prob = random.random()
 
 		# insert
-		if prob <= 0.60:
+		if prob <= 0.90:
 			sender_list = ["sender_1", "sender_2", "sender_3", "sender_4", "sender_5"]
 			courier_list = ["courier_1", "courier_2", "courier_3", "courier_4", "courier_5"]
 			receiver_list = ["receiver_1", "receiver_2", "receiver_3", "receiver_4", "receiver_5"]
@@ -113,7 +113,7 @@ def execute(duration, connection_string):
 				one_package["update_time"] = one_package["start_time"]
 
 				one_package["sender"] = sender_list[random.randint(0, 4)]
-				one_package["courier"] = courier_list[random.randint(0, 4)]
+				one_package["courier"] = "courier_4"
 				one_package["receiver"] = receiver_list[random.randint(0, 4)]
 				one_package["start_state"] = start_state_list[random.randint(0, len(start_state_list) - 1)]
 				one_package["destination_state"] = destination_state_list[random.randint(0, len(destination_state_list) - 1)]
@@ -203,10 +203,12 @@ if __name__ == '__main__':
 	aparser.add_argument('--clients', default=1, type=int, metavar='N', help='The number of blocking clients to fork')
 	aparser.add_argument('--execute', action='store_true', help='Executing the workload')
 	aparser.add_argument('--update_timestamp', action='store_true', help='Update to latest timestamp')
+	aparser.add_argument('--connection_string', type=str, help='connection string')
 	args = vars(aparser.parse_args())
 	# print(args)
 	
-	connection_string = 'tidb://<client_name>:<pwd>@xxx.xxxx.xxxx.xxxx.prod.aws.tidbcloud.com:4000/<DB_name>'
+	connection_string = args['connection_string']
+	# connection_string = "tidb://PingExpress_client:123@tidb.8c773a9c.c2c83c56.ap-northeast-1.prod.aws.tidbcloud.com:4000/PingExpressDB"
 	
 	if args['update_timestamp']:
 		print("starts updating timestamp")
@@ -232,5 +234,3 @@ if __name__ == '__main__':
 		pool.close()
 		pool.join()
 		print("execute finished")
-	
-

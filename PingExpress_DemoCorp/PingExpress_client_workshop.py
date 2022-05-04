@@ -185,10 +185,12 @@ if __name__ == '__main__':
 	aparser.add_argument('--duration', default=10, type=int, metavar='D',help='How long to run the app in seconds')
 	aparser.add_argument('--clients', default=1, type=int, metavar='N', help='The number of blocking clients to fork')
 	aparser.add_argument('--execute', action='store_true', help='Executing the workload')
+	aparser.add_argument('--connection_string', type=str, help='connection string')
 	args = vars(aparser.parse_args())
 	# print(args)
 	
-	connection_string = 'tidb://PingExpress_client:123@<your-tidb-connection-string>:4000/PingExpressDB'
+	connection_string = args['connection_string']
+	# connection_string = "tidb://PingExpress_client:123@<connection-string>:4000/PingExpressDB"
 
 	
 	if args['load']:

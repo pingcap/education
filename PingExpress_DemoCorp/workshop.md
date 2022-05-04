@@ -136,7 +136,7 @@ In this section, we walk you through the process of connecting to TiDB Cloud via
    7. Enter number *150,000*
    8. Choose your favorite background color.
 3. Save the question.
-   1. In the upper right corner, click Save.
+   1. In the upper right corner, click **Save**.
    2. Enter the name *Number of Packages in Processing*. 
    3. When being asked if you would like to add this question to the dashboard, click **Yes please!**, and choose **PingExpress_dashboard**. 
    4. The result will now appear on the dashboard.

@@ -36,3 +36,60 @@ Your TiDB Cloud cluster will be created in approximately 5 to 10 minutes.
 4. Note the information between the -h and -P parameters; you'll need this for a later step, as you will use it at a later step. For example:  *mysql -u root -h tidb.xxx.xxxxx.us-west-2.prod.aws.tidbcloud.com -P 4000 -p*
 5. Click the **Web SQL Shell tab**. 
 6. Click **Open SQL Shell** and enter the password for the cluster. You are now able to write SQL commands.
+
+## Task 3: Import the sample data (10 minutes)
+Write SQL commands in Web SQL Shell.
+1. Create a database.
+   ~~~
+   CREATE DATABASE PingExpressDB;
+   ~~~
+2. Create a user of the database. The user name is *'PingExpress_client'*, and you should set your own password to replace *'\<pwd\>'*, such as *'123'*.
+   ~~~   
+   CREATE USER 'PingExpress_client' IDENTIFIED BY '<pwd>';
+   ~~~
+3. Grant all privileges to the user you just created.
+   ~~~
+   GRANT ALL PRIVILEGES ON PingExpressDB.* TO 'PingExpress_client';
+   ~~~
+4. Navigate to the TiDB Cloud Clusters page and find your dev cluster.
+5. In the upper right corner of the pane, click **Import**. The **Data Import Task** page is displayed.
+6. Enter the following information, and click **Import** to import the sample data: 	
+   - Data Source Type: Select **AWS S3**
+   - Bucket URL: 
+   ~~~
+   s3://pingexpress/data_workshop/
+   ~~~
+   - Bucket Region: **Asia Pacific (Singapore)**
+   - Data Format: **Select TiDB Dumpling**
+   - Setup Credentials: 
+   ~~~
+   arn:aws:iam::385595570414:role/pingexpress_workshop
+   ~~~
+   for Role-ARN.
+   - Target Database:
+      - Username: root.
+      - Password: Enter your root password.
+   - DB/Tables Filter: Leave this field blank.
+   The data import process takes about 5 minutes. When the data import progress bar shows Success, you have successfully imported the sample data and the database schema in your database. 
+   Warning: Do not manipulate the data until the importing process finishes. Otherwise, the importing process fails.
+7. Check the imported data.
+Open Web SQL Shell and enter the cluster password. (Hint: On the TiDB Cloud console, in the upper right of the pane, click Connect, then click the Web SQL Shell tab.)
+   - Switch to PingExpressDB. 
+   ~~~
+   USE PingExpressDB;
+   ~~~
+   - Check the number of records 
+   ~~~
+   SELECT COUNT(*) FROM packages;
+   ~~~
+The result should be 762000.
+8. Create TiFlash replicas for the table packages.
+   ~~~
+   ALTER TABLE packages SET TiFlash REPLICA 1;
+   ~~~
+   Wait for a few minutes and then run the following query to check whether the TiFlash node is ready.
+   ~~~
+   SELECT * FROM information_schema.TIFLASH_REPLICA;
+   ~~~
+   When the TiFlash node is ready, the values of the “AVAILABLE” and “PROGRESS” columns turn to 1.
+

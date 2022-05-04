@@ -56,16 +56,15 @@ Write SQL commands in Web SQL Shell.
 6. Enter the following information, and click **Import** to import the sample data: 	
    - Data Source Type: Select **AWS S3**
    - Bucket URL: 
-   ~~~
-   s3://pingexpress/data_workshop/
-   ~~~
+      ~~~
+      s3://pingexpress/data_workshop/
+      ~~~
    - Bucket Region: **Asia Pacific (Singapore)**
    - Data Format: **Select TiDB Dumpling**
-   - Setup Credentials: 
-   ~~~
-   arn:aws:iam::385595570414:role/pingexpress_workshop
-   ~~~
-   for Role-ARN.
+   - Setup the following credentials for Role ARN: 
+      ~~~
+      arn:aws:iam::385595570414:role/pingexpress_workshop
+      ~~~
    - Target Database:
       - Username: root.
       - Password: Enter your root password.
@@ -75,13 +74,13 @@ Write SQL commands in Web SQL Shell.
 7. Check the imported data.
 Open Web SQL Shell and enter the cluster password. (Hint: On the TiDB Cloud console, in the upper right of the pane, click Connect, then click the Web SQL Shell tab.)
    - Switch to PingExpressDB. 
-   ~~~
-   USE PingExpressDB;
-   ~~~
+      ~~~
+      USE PingExpressDB;
+      ~~~
    - Check the number of records 
-   ~~~
-   SELECT COUNT(*) FROM packages;
-   ~~~
+      ~~~
+      SELECT COUNT(*) FROM packages;
+      ~~~
 The result should be 762000.
 8. Create TiFlash replicas for the table packages.
    ~~~

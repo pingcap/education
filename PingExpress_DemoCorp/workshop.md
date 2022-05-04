@@ -152,22 +152,20 @@ In this section, we walk you through the process of connecting to TiDB Cloud via
    ~~~
    cd education/PingExpress_DemoCorp
    ~~~
-3. Update the connection string in the main method of PingExpress_client_workshop.py. The connection string is in the format:
+3. Compose your connection string. The connection string is in the following format. You can find the host address for TiDB Cloud in Connect to TiDB - Standard Connection - Step 2 in the TiDB Console, in the format: *xxx.xxxx.xxxx.xxxx.prod.aws.tidbcloud.com.*  
    ~~~
-   tidb://<client_name>:<pwd>@xxx.xxxx.xxxx.xxxx.prod.aws.tidbcloud.com:4000/<DB_name>
+   tidb://<client_name>:<pwd>@<host-address>:4000/<DB_name>
    ~~~
-   For example, if the client name is PingExpress_client,  the password is 123, and the database name is PingExpressDB,, the connection string is:
+   For example, if the client name is PingExpress_client, the password is 123, and the database name is PingExpressDB, the connection string is:
    ~~~
    tidb://PingExpress_client:123@xxx.xxxx.xxxx.xxxx.prod.aws.tidbcloud.com:4000/PingExpressDB
    ~~~
-4. You can find the host address for TiDB Cloud in Connect to TiDB - Standard Connection - Step 2 in the TiDB Console, in the format: *xxx.xxxx.xxxx.xxxx.prod.aws.tidbcloud.com.*  
 
-5. Execute the program. Enter
+4. Execute the program. Enter
    ~~~
-   python3 PingExpress_client_workshop.py --execute --clients 50 --duration 200
+   python3 PingExpress_client_workshop.py --execute --clients 50 --duration 200 --connection-string <your-connection-string>
    ~~~
-   The command assumes there will be 50 clients, and the program runs for 200 seconds. 
-Note: For TiDB Cloud Developer Tier, the maximum number of connections allowed is 50.
+   The command assumes there will be 50 clients, and the program runs for 200 seconds. Note: For TiDB Cloud Developer Tier, the maximum number of connections allowed is 50.
 
 6. Observe the results. When the program starts running, you can navigate to the Metabase dashboard and observe the dashboard being updated in real time.
 

@@ -170,4 +170,5 @@ In this section, we walk you through the process of connecting to TiDB Cloud via
 Note: For TiDB Cloud Developer Tier, the maximum number of connections allowed is 50.
 
 6. Observe the results. When the program starts running, you can navigate to the Metabase dashboard and observe the dashboard being updated in real time.
-![result](img/result.png)
+
+   ![result](img/result.png)

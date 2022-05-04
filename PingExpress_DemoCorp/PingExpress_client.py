@@ -208,7 +208,7 @@ if __name__ == '__main__':
 	# print(args)
 	
 	connection_string = args['connection_string']
-	# connection_string = "tidb://PingExpress_client:123@tidb.8c773a9c.c2c83c56.ap-northeast-1.prod.aws.tidbcloud.com:4000/PingExpressDB"
+	# connection_string = "tidb://PingExpress_client:123@<connection-string>:4000/PingExpressDB"
 	
 	if args['update_timestamp']:
 		print("starts updating timestamp")

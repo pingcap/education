@@ -69,19 +69,18 @@ Write SQL commands in Web SQL Shell.
       - Username: root.
       - Password: Enter your root password.
    - DB/Tables Filter: Leave this field blank.
-The data import process takes about 5 minutes. When the data import progress bar shows Success, you have successfully imported the sample data and the database schema in your database. 
-Warning: Do not manipulate the data until the importing process finishes. Otherwise, the importing process fails.
+   - The data import process takes about 5 minutes. When the data import progress bar shows Success, you have successfully imported the sample data and the database schema in your database. 
+
 7. Check the imported data.
 Open Web SQL Shell and enter the cluster password. (Hint: On the TiDB Cloud console, in the upper right of the pane, click Connect, then click the Web SQL Shell tab.)
    - Switch to PingExpressDB. 
       ~~~
       USE PingExpressDB;
       ~~~
-   - Check the number of records 
+   - Check the number of records. The result should be 762000. 
       ~~~
       SELECT COUNT(*) FROM packages;
       ~~~
-The result should be 762000.
 
 8. Create TiFlash replicas for the table packages.
    ~~~

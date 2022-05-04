@@ -143,3 +143,30 @@ In this section, we walk you through the process of connecting to TiDB Cloud via
    5. Click Save. 
 4. Navigate to the clock button on the upper right corner, and set auto-refresh as 1 minute.
 
+## Task 6: Execute the program (10 minutes)
+1. Clone the program to your local machine, or any virtual machines provided by your cloud vendor.
+   ~~~
+   git clone https://github.com/pingcap/education.git
+   ~~~
+2. Go to the directory for **PingExpress_DemoCorp**.
+   ~~~
+   cd education/PingExpress_DemoCorp
+   ~~~
+3. Update the connection string in the main method of PingExpress_client_workshop.py. The connection string is in the format:
+   ~~~
+   tidb://<client_name>:<pwd>@xxx.xxxx.xxxx.xxxx.prod.aws.tidbcloud.com:4000/<DB_name>
+   ~~~
+   For example, if the client name is PingExpress_client,  the password is 123, and the database name is PingExpressDB,, the connection string is:
+   ~~~
+   tidb://PingExpress_client:123@xxx.xxxx.xxxx.xxxx.prod.aws.tidbcloud.com:4000/PingExpressDB
+   ~~~
+4. You can find the host address for TiDB Cloud in Connect to TiDB - Standard Connection - Step 2 in the TiDB Console, in the format: *xxx.xxxx.xxxx.xxxx.prod.aws.tidbcloud.com.*  
+
+5. Execute the program. Enter
+   ~~~
+   python3 PingExpress_client_workshop.py --execute --clients 50 --duration 200
+   ~~~
+   The command assumes there will be 50 clients, and the program runs for 200 seconds. 
+Note: For TiDB Cloud Developer Tier, the maximum number of connections allowed is 50.
+
+6. Observe the results. When the program starts running, you can navigate to the Metabase dashboard and observe the dashboard being updated in real time.

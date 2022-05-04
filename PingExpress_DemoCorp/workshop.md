@@ -92,3 +92,54 @@ The result should be 762000.
    ~~~
    When the TiFlash node is ready, the values of the “AVAILABLE” and “PROGRESS” columns turn to 1.
 
+## Task 4: Connect to TiDB Cloud via Metabase (10 minutes)
+In this section, we walk you through the process of connecting to TiDB Cloud via Metabase. For more information, see [How to Connect TiDB Cloud to Metabase](https://en.pingcap.com/blog/how-to-connect-tidb-cloud-to-metabase).
+
+1. Start the Metabase application and click **Let’s get started**.
+2. Select your preferred language and click **Next**. 
+3. Enter your information and account details in Step 2 and click **Next**.
+4. In the **Add your data** step, click the **Database type** drop down menu and select **MySQL**.
+5. Specify the following settings
+   - Name: PingExpressDB
+   - Host: <your_tidb_cloud_ip_address_obtained_previously>.
+   - Port: 4000
+   - Database name: PingExpressDB
+   - Username: root
+   - Password: <password_of_your_tidb_cluster>
+6. Scroll down to the bottom and click Next.
+7. For the Usage data preference step, change your preference if needed and click **Next**. 
+8. Click **Take me to Metabase**.
+
+## Task 5: Build your dashboards in Metabase (10 minutes)
+1. Create a dashboard.
+   In the top right corner of the dashboard, click the **+** sign, and then choose **New Dashboard**. 
+   1. Enter the name as *PingExpress_dashboard*.
+   2. Click **Create**.
+   3. Click **Save**.
+2. Add a question.
+   1. In the top right corner of the dashboard, click the **+** sign, and then choose **SQL Query**.
+   2. Select **PingExpressDB** as the database. 
+   3. Find the number of packages in processing. Enter the following query:
+      ~~~
+      SELECT courier, count(*) AS numPackages
+      FROM packages
+      WHERE transaction_kind != "4_pkg_out"
+      GROUP BY courier
+      ORDER BY count(*) DESC;
+      ~~~
+      Click Run
+   4. After getting the result, click the **Visualization** button, and then choose **Table**.
+   5. Click Conditional Formatting.
+      - Click **Add a rule**
+      - Choose **numPackages**
+   6. In **When a cell in this column…** choose **is greater than**
+   7. Enter number *150,000*
+   8. Choose your favorite background color.
+3. Save the question.
+   1. In the upper right corner, click Save.
+   2. Enter the name *Number of Packages in Processing*. 
+   3. When being asked if you would like to add this question to the dashboard, click **Yes please!**, and choose **PingExpress_dashboard**. 
+   4. The result will now appear on the dashboard.
+   5. Click Save. 
+4. Navigate to the clock button on the upper right corner, and set auto-refresh as 1 minute.
+

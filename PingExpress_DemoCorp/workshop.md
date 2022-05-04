@@ -106,7 +106,7 @@ In this section, we walk you through the process of connecting to TiDB Cloud via
    - Database name: PingExpressDB
    - Username: root
    - Password: <password_of_your_tidb_cluster>
-6. Scroll down to the bottom and click Next.
+6. Scroll down to the bottom and click **Next**.
 7. For the Usage data preference step, change your preference if needed and click **Next**. 
 8. Click **Take me to Metabase**.
 

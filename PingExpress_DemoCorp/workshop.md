@@ -28,13 +28,13 @@ Your TiDB Cloud cluster will be created in approximately 5 to 10 minutes.
 
 ## Task 2: Connect to TiDB Cloud (5 minutes)
 1. On the TiDB Cloud console, click **PingExpressDB**.
-2. In the upper right of the pane, **click Connect**. The **Connect to TiDB** dialog displays.
+2. In the upper right of the pane, click **Connect**. The **Connect to TiDB** dialog displays.
 3. Create the traffic filter for the cluster.
    - Click **Allow Access from Anywhere** in Step 1.
    - Click **Create Filter**.
   Note: For production environments, do not enable **Allow Access from Anywhere**.
 4. Note the information between the -h and -P parameters; you'll need this for a later step, as you will use it at a later step. For example:  *mysql -u root -h tidb.xxx.xxxxx.us-west-2.prod.aws.tidbcloud.com -P 4000 -p*
-5. Click the **Web SQL Shell tab**. 
+5. Click the **Web SQL Shell** tab. 
 6. Click **Open SQL Shell** and enter the password for the cluster. You are now able to write SQL commands.
 
 ## Task 3: Import the sample data (10 minutes)

@@ -14,3 +14,14 @@ You should have the following software and packages installed:
 - [Metabase](https://www.metabase.com/docs/latest/operations-guide/installing-metabase.html)
 
 Note: It is recommended to use pip3 to install packages, such as SQLAlchemy. We also suggest NOT to use the Mac application version for Metabase. It is gradually being phased out. We recommend you run Metabase on [Heroku](https://www.metabase.com/docs/latest/operations-guide/running-metabase-on-heroku.html). You may also use the jar version for Metabase.
+
+## Task 1: Create a TiDB Developer Tier cluster (10 minutes)
+1. If you do not have a TiDB Cloud account, click [here](https://tidbcloud.com/signup) to sign up for an account.
+2. [Log in](https://tidbcloud.com/) to your TiDB Cloud account.
+3. Click **Create a Cluster**. 
+4. Click **Developer Tier**.
+5. On the **Create a Cluster (Dev Tier)** page, set up **Cluster Name** and **Root Password**. (In this tutorial, we will call our cluster **PingExpressDB**).
+6. Choose a **Region** close to your physical location. 
+7. Click **Create**.
+
+Your TiDB Cloud cluster will be created in approximately 5 to 10 minutes.

@@ -132,7 +132,7 @@ In this section, we walk you through the process of connecting to TiDB Cloud via
       - Click **Add a rule**
       - Choose **numPackages**
    6. In **When a cell in this column…** choose **is greater than**
-   7. Enter number *150,000*
+   7. Enter number *115,000*
    8. Choose your favorite background color.
 3. Save the question.
    1. In the upper right corner, click **Save**.

@@ -123,7 +123,7 @@ In this section, we walk you through the process of connecting to TiDB Cloud via
       ~~~
       SELECT courier, count(*) AS numPackages
       FROM packages
-      WHERE transaction_kind != "4_pkg_out"
+      WHERE transaction_kind != '4_pkg_out'
       GROUP BY courier
       ORDER BY count(*) DESC;
       ~~~

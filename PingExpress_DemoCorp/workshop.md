@@ -34,8 +34,7 @@ Your TiDB Cloud cluster will be created in approximately 5 to 10 minutes.
    - Click **Create Filter**.
   Note: For production environments, do not enable **Allow Access from Anywhere**.
 4. Note the information between the -h and -P parameters; you'll need this for a later step, as you will use it at a later step. For example:  *mysql -u root -h tidb.xxx.xxxxx.us-west-2.prod.aws.tidbcloud.com -P 4000 -p*
-5. Click the **Web SQL Shell** tab. 
-6. Click **Open SQL Shell** and enter the password for the cluster. You are now able to write SQL commands.
+5. Open terminal, and type in the command provided to connect to your cluster. (You may also use WebSQl Shell.)
 
 ## Task 3: Import the sample data (10 minutes)
 Write SQL commands in Web SQL Shell.

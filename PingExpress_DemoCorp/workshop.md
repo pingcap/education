@@ -57,13 +57,13 @@ Write SQL commands in Web SQL Shell.
    - Data Source Type: Select **AWS S3**
    - Bucket URL: 
       ~~~
-      s3://pingexpress/data_workshop/
+      s3://pingexpress-na/data_workshop/
       ~~~
    - Bucket Region: **Asia Pacific (Singapore)**
    - Data Format: **Select TiDB Dumpling**
    - Setup the following credentials for Role ARN: 
       ~~~
-      arn:aws:iam::385595570414:role/pingexpress_workshop
+      arn:aws:iam::577523860935:role/pingexpress-na
       ~~~
    - Target Database:
       - Username: root.

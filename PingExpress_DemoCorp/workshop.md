@@ -58,7 +58,7 @@ Write SQL commands in your terminal.
       ~~~
       s3://pingexpress-na/data_workshop/
       ~~~
-   - Bucket Region: **US West(Oregon)**
+   - Bucket Region: **US West (Oregon)**
    - Data Format: **Select TiDB Dumpling**
    - Setup the following credentials for Role ARN: 
       ~~~

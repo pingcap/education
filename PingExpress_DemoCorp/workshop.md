@@ -21,7 +21,7 @@ Note: It is recommended to use pip3 to install packages, such as SQLAlchemy. We 
 3. Click **Create a Cluster**. 
 4. Click **Developer Tier**.
 5. On the **Create a Cluster (Dev Tier)** page, set up **Cluster Name** and **Root Password**. (In this tutorial, we will call our cluster **PingExpressDB**).
-6. Choose a **Region** close to your physical location. 
+6. Choose a **US-West-2 (Oregon)** as your **Region**. 
 7. Click **Create**.
 
 Your TiDB Cloud cluster will be created in approximately 5 to 10 minutes.
@@ -59,7 +59,7 @@ Write SQL commands in Web SQL Shell.
       ~~~
       s3://pingexpress-na/data_workshop/
       ~~~
-   - Bucket Region: **Asia Pacific (Singapore)**
+   - Bucket Region: **US West(Oregon)**
    - Data Format: **Select TiDB Dumpling**
    - Setup the following credentials for Role ARN: 
       ~~~

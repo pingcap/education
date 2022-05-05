@@ -71,7 +71,7 @@ Write SQL commands in your terminal.
    - The data import process takes about 5 minutes. When the data import progress bar shows **Success**, you have successfully imported the sample data and the database schema in your database. 
 
 7. Check the imported data.
-Open Web SQL Shell and enter the cluster password. (Hint: On the TiDB Cloud console, in the upper right of the pane, click Connect, then click the Web SQL Shell tab.)
+Open your terminal which is connected to TiDB Cloud.
    - Switch to PingExpressDB. 
       ~~~
       USE PingExpressDB;

@@ -162,7 +162,7 @@ In this section, we walk you through the process of connecting to TiDB Cloud via
 
 4. Execute the program. Enter
    ~~~
-   python3 PingExpress_client_workshop.py --execute --clients 50 --duration 200 --connection-string <your-connection-string>
+   python3 PingExpress_client_workshop.py --execute --clients 50 --duration 200 --connection_string <your-connection-string>
    ~~~
    The command assumes there will be 50 clients, and the program runs for 200 seconds. Note: For TiDB Cloud Developer Tier, the maximum number of connections allowed is 50.
 

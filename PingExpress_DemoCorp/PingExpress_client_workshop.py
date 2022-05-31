@@ -204,6 +204,7 @@ if __name__ == '__main__':
 	
 	if args['execute']:
 		print("starts execution")
+		execute(args['duration'], connection_string) # solo thread, helpful when need to see error message
 		pool = multiprocessing.Pool(args['clients'])
 		for i in range(args['clients']):
 			pool.apply_async(execute, (args['duration'], connection_string,))

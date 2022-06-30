@@ -1,7 +1,0 @@
-tasks:
-  - name: Terminal 1
-    init: |
-      sudo apt-get update
-      sudo apt-get install -y python-sqlalchemy
-      pip3 install mysql-connector-python
-      pip3 install git+https://github.com/pingcap/sqlalchemy-tidb.git@main

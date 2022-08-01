@@ -101,6 +101,7 @@ Write SQL commands in your terminal.
       ~~~
       nft.assets
       ~~~
+   - Similarly, import table **collections** and **events**.
 
 13. Create TiFlash replicas for all three tables.
    ~~~

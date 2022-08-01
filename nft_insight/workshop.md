@@ -27,17 +27,26 @@ Write SQL commands in your terminal.
 
 5. Enter the root password.
 
-6. Create a database.
+6. Create a user of the database. The user name is *'<your_tanent_id>_client'*, and you should set your own password to replace *'\<pwd\>'*, such as *'123'*.
+   ~~~   
+   CREATE USER '<your_tanent_id>_client' IDENTIFIED BY '<pwd>';
+   ~~~
+7. Grant all privileges to the user you just created.
+   ~~~
+   GRANT ALL PRIVILEGES ON nft.* TO '<your_tanent_id>_client';
+   ~~~
+   
+8. Create a database.
    ~~~
    CREATE DATABASE nft;
    ~~~
 
-7. Switch to the database just created.
+9. Switch to the database just created.
    ~~~
    use nft;
    ~~~
 
-8. Create 3 tables.
+10. Create 3 tables.
    ~~~
    CREATE TABLE assets (
       asset_id BIGINT PRIMARY KEY,
@@ -68,18 +77,18 @@ Write SQL commands in your terminal.
    );
    ~~~
 
-9. Add index to the tables
+11. Add index to the tables
    ~~~
    CREATE INDEX collection_slug_assets_index ON assets (collection_slug);
    CREATE INDEX collection_slug_events_index ON events (collection_slug);
    CREATE INDEX asset_id_events_index ON events (asset_id);
    ~~~ 
 
-10. Navigate to the TiDB Cloud Clusters page and find your dev cluster.
+12. Navigate to the TiDB Cloud Clusters page and find your dev cluster.
 
-11. In the upper right corner of the pane, click **Import**. The **Data Import Task** page is displayed.
+13. In the upper right corner of the pane, click **Import**. The **Data Import Task** page is displayed.
 
-12. Enter the following information, and click **Import** to import the sample data: 	
+14. Enter the following information, and click **Import** to import the sample data: 	
    - Data Source Type: Select **AWS S3**
    - Bucket URL: 
       ~~~
@@ -103,14 +112,14 @@ Write SQL commands in your terminal.
       ~~~
    - Similarly, import table **collections** and **events**.
 
-13. Create TiFlash replicas for all three tables.
+15. Create TiFlash replicas for all three tables.
    ~~~
    ALTER TABLE assets SET TiFlash REPLICA 1;
    ALTER TABLE collections SET TiFlash REPLICA 1;
    ALTER TABLE events SET TiFlash REPLICA 1;
    ~~~
 
-14. Wait for a few minutes and then run the following queries to check whether the TiFlash node is ready.
+16. Wait for a few minutes and then run the following queries to check whether the TiFlash node is ready.
    ~~~
    SELECT * FROM information_schema.TIFLASH_REPLICA;
    ~~~

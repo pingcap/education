@@ -85,13 +85,12 @@ Write SQL commands in your terminal.
       ~~~
       s3://nft-insight-na/nft_insight_workshop/
       ~~~
-   - Bucket Region: **US West (Oregon)**
    - Data Format: **CSV**
    - Setup the following credentials for Role ARN: 
       ~~~
       arn:aws:iam::577523860935:role/NFT-insight-workshop
       ~~~
-   -  CSV Configuration: Leave as default
+   - CSV Configuration: Leave as default
    - Enter your root password
    - DB/Tables Filter: (Leave Blank)
    - Object Name Pattern: 

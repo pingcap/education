@@ -1,4 +1,4 @@
-# Workshop sheet: BBuilding a Crypto Analytics Application with TiDB Cloud & Retool
+# Workshop sheet: Building a Crypto Analytics Application with TiDB Cloud & Retool
 In this workshop, we will build an NFT Insight application with TiDB cloud and Retool. 
 
 ## Task 1: Create a TiDB Developer Tier cluster (10 minutes)

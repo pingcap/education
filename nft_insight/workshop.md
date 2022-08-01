@@ -39,7 +39,7 @@ Write SQL commands in your terminal.
 
 8. Create 3 tables.
    ~~~
-      CREATE TABLE assets (
+   CREATE TABLE assets (
       asset_id BIGINT PRIMARY KEY,
       asset_name TEXT,
       collection_slug VARCHAR(254),

@@ -29,11 +29,11 @@ Write SQL commands in your terminal.
 
 6. Create a user of the database. The user name is *'<your_tanent_id>_client'*, and you should set your own password to replace *'\<pwd\>'*, such as *'123'*.
    ~~~   
-   CREATE USER '<your_tanent_id>_client' IDENTIFIED BY '<pwd>';
+   CREATE USER '<your_tanent_id>.client' IDENTIFIED BY '<pwd>';
    ~~~
 7. Grant all privileges to the user you just created.
    ~~~
-   GRANT ALL PRIVILEGES ON nft.* TO '<your_tanent_id>_client';
+   GRANT ALL PRIVILEGES ON nft.* TO '<your_tanent_id>.client';
    ~~~
    
 8. Create a database.

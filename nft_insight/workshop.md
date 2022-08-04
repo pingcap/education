@@ -97,7 +97,7 @@ Write SQL commands in your terminal.
    - Data Format: **CSV**
    - Setup the following credentials for Role ARN: 
       ~~~
-      arn:aws:iam::577523860935:role/NFT-insight-workshop
+      arn:aws:iam::577523860935:role/nft-insight-workshop-0803
       ~~~
    - CSV Configuration: Leave as default
    - Enter your root password
